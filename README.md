@@ -1,2 +1,2 @@
 # MyWebsite
-Simple website
+Simple website using HTML5 and CSS.
