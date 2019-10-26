@@ -1,23 +1,3 @@
-.container {
-    margin: 0 auto;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* margin-bottom: 130px; */
-    max-width: 1052px;
-}
-
-/* .nav-container {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1052px;
-    margin-bottom: 130px;
-    height: 70px;
-} */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -28,8 +8,6 @@ body {
     font-family: "Open Sans", sans-serif;
     background-color: white;
 }
-
-
 
 .btn {
     text-decoration: none;
@@ -138,9 +116,6 @@ body {
     width: 100%;
 }
 
-
-/* KONIEC HEADERA */
-
 /* SEKCJA 1 */
 
 .section-title {
@@ -198,9 +173,6 @@ body {
     line-height: 1.25rem;
 }
 
-
-/* KONIEC 1 SEKCJI */
-
 /* SEKCJA 2 */
 
 .content {
@@ -212,8 +184,6 @@ body {
     max-width: 70vw;
 
 }
-
-/* STYLOWANIE BOXOW */
 
 /* BOX1 */
 .content-box {
@@ -321,8 +291,7 @@ body {
     background-color: #55DFB4;
 }
 
-/* KONIEC SEKCJI 2 */
-/* SEKCJA 3 */
+/* SEKCJA 3  PRICING */
 
 .section-container {
     width: 80vw;
@@ -434,14 +403,10 @@ body {
     color: #55DFB4;
 }
 
-
-
-
-/* SEKCJA KALKULATOR */
+/* SEKCJA 4 KALKULATOR */
 .calculator {
     background-color: #F7F7F7;
     padding-bottom: 109px;
-    /* margin-bottom: 100px; */
 }
 
 .calculator>.section-title {
@@ -566,9 +531,7 @@ body {
 }
 
 
-/* FORMuLARZ SEKCJA OSATNIA */
-
-
+/* FORMULARZ SEKCJA 5 */
 .contact {
     margin: 100px auto 60px auto;
     width: 70vw;
