@@ -203,37 +203,42 @@
         <h2 class="section-title">Calculate how much you'll pay</h2>
         <section class="calculator-box">
             <form class="orders">
-                <input type="text" name="quantity" placeholder="Products quantity" class="calc-input">
-                <input type="text" name="order" placeholder="Estimated orders in month" class="calc-input">
-                <input type="text" name="package" placeholder="Choose package" class="calc-input">
-                <label class="checkbox-label"><input type="checkbox" name="accounting"
-                        class="calc-checkbox">Accounting</label>
+                <input type="number" name="quantity" placeholder="Products quantity" class="calc-input">
+                <input type="number" name="order" placeholder="Estimated orders in month" class="calc-input">
+                <!-- <input type="text" name="package" placeholder="Choose package"> -->
+                <select name="package" id="package-list" class="calc-input">
+                    <option value="">Choose package</option>
+                    <option value="Basic">Basic</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Premium">Premium</option>
+                </select>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="accounting" class="calc-checkbox">Accounting</label>
                 <label class="checkbox-label"><input type="checkbox" name="rental" class="calc-checkbox">Rental of a
                     payment terminal</label>
-
-
             </form>
             <div class="main-calculator">
-                <div class="calc-row">
+                <div class="calc-row" id="first-row">
                     <span class="row-item">Piwko</span>
                     <span class="row-calculation">Piwko</span>
                     <span class="row-value">Piwko</span>
                 </div>
-                <div class="calc-row">
+                <div class="calc-row" id="second-row">
                     <span class="row-item">Piwko</span>
                     <span class="row-calculation">Piwko</span>
                     <span class="row-value">Piwko</span>
                 </div>
-                <div class="calc-row">
+                <div class="calc-row" id="third-row">
                     <span class="row-item">Piwko</span>
                     <span class="row-calculation">Piwko</span>
                     <span class="row-value">Piwko</span>
                 </div>
-                <div class="calc-row">
+                <div class="calc-row" id="fourth-row">
                     <span class="row-item">Piwko</span>
                     <span class="row-value">Piwko</span>
                 </div>
-                <div class="calc-row">
+                <div class="calc-row" id="fifth-row">
                     <span class="row-item">Piwko</span>
                     <span class="row-value">Piwko</span>
                 </div>
