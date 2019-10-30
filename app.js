@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
         inputs[i].addEventListener("click", function () {
             const button = document.querySelector(".value-btn").lastElementChild;
             const divs = document.querySelectorAll(".calc-row");
-            //dla 1 inputa
             const qty1 = divs[0].querySelector(".row-calculation");
             const val1 = divs[0].querySelector(".row-value");
             const value1 = 0.5;
@@ -15,10 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const value2 = 0.25;
             const qty3 = divs[2].querySelector(".row-calculation");
             const val3 = divs[2].querySelector(".row-value");
-            // const qty4 = divs[3].querySelector(".row-calculation");
             const val4 = divs[3].querySelector(".row-value");
-
-            const accounting = divs[3];
             const value4 = 35;
             if (i === 0) {
                 const quantityValue = this.value;
@@ -33,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 divs[1].style.visibility = "visible";
             } else if (i === 2) {
                 const quantityValue = this.value;
-                // val3.innerText = quantityValue;
                 qty3.innerText = quantityValue;
                 divs[2].style.visibility = "visible";
                 const prices = [0, 25, 60];
@@ -44,14 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else if (quantityValue === "Premium") {
                     val3.innerText = "$" + prices[2];
                 }
-            } else if (i === 3 || accounting.checked) {
+            } else if (i === 3) {
                 val4.innerText = "$" + value4;
                 divs[3].style.visibility = "visible";
+
             }
-
-
-
-
         });
     }
 
