@@ -1,42 +1,53 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    //pobranie inputow typu number
-    const quantity = document.querySelector("[name=quantity]");
-    const order = document.querySelector("[name=order]");
-    const package = document.querySelector("[name=package]");
-    const accounting = document.querySelector("[name=accounting]");
-    const rental = document.querySelector("[name=rental]");
-    //pobranie 1 zielonego diva
-    const firstRow = document.getElementById("first-row");
-    const secondRow = document.getElementById("second-row");
-    const thirdRow = document.getElementById("third-row");
-    const fourthRow = document.getElementById("fourth-row");
-    const fifthRow = document.getElementById("fifth-row");
-    //pobranie wartości z inputów 
-    const qty1 = firstRow.querySelector(".row-calculation");
-    const qty2 = secondRow.querySelector(".row-calculation");
-    const qty3 = thirdRow.querySelector(".row-calculation");
-    const val1 = firstRow.querySelector(".row-value");
-    const val2 = secondRow.querySelector(".row-value");
-    const val3 = thirdRow.querySelector(".row-value");
-    const val4 = fourthRow.querySelector(".row-value");
-    const val5 = fifthRow.querySelector(".row-value");
-
     const inputs = document.querySelector(".orders").querySelectorAll(".calc-input, .calc-checkbox");
     console.log(inputs);
     for (let i = 0; i < inputs.length; i++) {
-        // let singleElement = inputs[i];
         inputs[i].addEventListener("click", function () {
             const button = document.querySelector(".value-btn").lastElementChild;
-            const quantity = inputs[0];
+            const divs = document.querySelectorAll(".calc-row");
+            //dla 1 inputa
+            const qty1 = divs[0].querySelector(".row-calculation");
+            const val1 = divs[0].querySelector(".row-value");
+            const value1 = 0.5;
+            const qty2 = divs[1].querySelector(".row-calculation");
+            const val2 = divs[1].querySelector(".row-value");
+            const value2 = 0.25;
+            const qty3 = divs[2].querySelector(".row-calculation");
+            const val3 = divs[2].querySelector(".row-value");
+            // const qty4 = divs[3].querySelector(".row-calculation");
+            const val4 = divs[3].querySelector(".row-value");
+
+            const accounting = divs[3];
+            const value4 = 35;
             if (i === 0) {
-                const firstRow = document.getElementById("first-row");
-                const qty1 = firstRow.querySelector(".row-calculation");
-                const val1 = firstRow.querySelector(".row-value");
+                const quantityValue = this.value;
+                val1.innerText = "$" + quantityValue * value1;
+                qty1.innerText = `${quantityValue} *$${value1}`;
+                divs[0].style.visibility = "visible";
 
-
-
-            };
+            } else if (i === 1) {
+                const quantityValue = this.value;
+                val2.innerText = "$" + quantityValue * value2;
+                qty2.innerText = `${quantityValue} *$${value2}`;
+                divs[1].style.visibility = "visible";
+            } else if (i === 2) {
+                const quantityValue = this.value;
+                // val3.innerText = quantityValue;
+                qty3.innerText = quantityValue;
+                divs[2].style.visibility = "visible";
+                const prices = [0, 25, 60];
+                if (quantityValue === "Basic") {
+                    val3.innerText = "$" + prices[0];
+                } else if (quantityValue === "Professional") {
+                    val3.innerText = "$" + prices[1];
+                } else if (quantityValue === "Premium") {
+                    val3.innerText = "$" + prices[2];
+                }
+            } else if (i === 3 || accounting.checked) {
+                val4.innerText = "$" + value4;
+                divs[3].style.visibility = "visible";
+            }
 
 
 
