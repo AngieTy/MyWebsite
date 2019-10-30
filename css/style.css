@@ -441,17 +441,39 @@ body {
     border: 1px solid #08A6E4;
     border-radius: 6px;
     padding-left: 20px;
+    color: #707070;
+    font-size: 0.8125rem;
 
 }
+
+select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+}
+
+/* select::before {
+    content: '\f35b';
+    display: block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* transform: translateY(-50%); */
+/* color: #08A6E4; */
+/* background-color: black; */
+
+
+/* } */
 
 select.calc-input:focus option:first-of-type {
     display: none;
 }
 
-.calc-input {
-    color: #707070;
-    font-size: 0.8125rem;
-}
 
 .checkbox-label {
     display: flex;
