@@ -208,12 +208,15 @@
             <form class="orders">
                 <input type="number" name="quantity" placeholder="Products quantity" class="calc-input">
                 <input type="number" name="order" placeholder="Estimated orders in month" class="calc-input">
-                <select name="package" id="package-list" class="calc-input">
-                    <option value="">Choose package</option>
-                    <option value="Basic">Basic</option>
-                    <option value="Professional">Professional</option>
-                    <option value="Premium">Premium</option>
-                </select>
+                <ul name="package" id="package-list" class="calc-input">
+                    <li class="choose">Choose package</li>
+                    <ul class="nested-list">
+                        <li class="Basic">Basic</li>
+                        <li class="Professional">Professional</li>
+                        <li class="Premium">Premium</li>
+                    </ul>
+
+                </ul>
                 <label class="checkbox-label">
                     <input type="checkbox" name="accounting" class="calc-checkbox">Accounting</label>
                 <label class="checkbox-label"><input type="checkbox" name="rental" class="calc-checkbox">Rental of a

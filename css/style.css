@@ -447,8 +447,30 @@ body {
     padding-left: 20px;
     color: #707070;
     font-size: 0.8125rem;
+}
+
+ul.calc-input {
+    padding-top: 12px;
 
 }
+
+.nested-list {
+    display: none;
+    width: 100%;
+    background-color: rgba(37, 25, 25, 1);
+    margin-top: 40px;
+    box-shadow: 0px 3px 6px #08A6E429;
+    border: 1px solid #FB3B64;
+    border-radius: 6px;
+    padding: 20px;
+    color: #707070;
+    font-size: 0.8125rem;
+}
+
+.nested-list li {
+    padding-bottom: 20px;
+}
+
 
 select {
     -moz-appearance: none;
