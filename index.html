@@ -206,29 +206,14 @@
         <h2 class="section-title">Calculate how much you'll pay</h2>
         <section class="calculator-box">
             <form class="orders">
-                <input type="number" name="quantity" placeholder="Products quantity" class="calc-input">
-                <input type="number" name="order" placeholder="Estimated orders in month" class="calc-input">
-                <ul name="package" id="package-list" class="calc-input">
-                    <li class="">Choose package</li>
-                    <ul class="nested-list">
-                        <li class="Basic">Basic</li>
-                        <li class="Professional">Professional</li>
-                        <li class="Premium">Premium</li>
-                    </ul>
-
-                </ul>
-
-
-
-
-
-
-
-
-
-
-
-
+                <input type="number" name="quantity" min="0" placeholder="Products quantity" class="calc-input">
+                <input type="number" name="order" min="0" placeholder="Estimated orders in month" class="calc-input">
+                <select name="package" id="package-list" class="calc-input">
+                    <option value="">Choose package</option>
+                    <option value="Basic">Basic</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Premium">Premium</option>
+                </select>
                 <label class="checkbox-label">
                     <input type="checkbox" name="accounting" class="calc-checkbox">Accounting</label>
                 <label class="checkbox-label"><input type="checkbox" name="rental" class="calc-checkbox">Rental of a
@@ -289,13 +274,19 @@
                 <input type="text" id="email" class="input">
             </div>
             <div class="form-field last-field">
-                <label class="checkbox-rodo"> <input type="checkbox"></label>
+                <label class="checkbox-rodo"> <input type="checkbox">
+                    <p>I hereby give consent for my personal data included
+                        in my application to be
+                        processed for the purposes of the recruitment process under the European Parliament’s and
+                        Council of
+                        the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with
+                        regard
+                        to the processing of personal data and on the free movement of such data, and repealing
+                        Directive
+                        95/46/EC (Data Protection Directive) </p>
+                </label>
 
-                <p>I hereby give consent for my personal data included in my application to be
-                    processed for the purposes of the recruitment process under the European Parliament’s and Council of
-                    the European Union Regulation on the Protection of Natural Persons as of 27 April 2016, with regard
-                    to the processing of personal data and on the free movement of such data, and repealing Directive
-                    95/46/EC (Data Protection Directive)</p>
+
 
             </div>
             <button class="form-button btn">Send</button>
