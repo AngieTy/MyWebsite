@@ -22,13 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const val4 = fourthRow.querySelector(".row-value");
     const val5 = fifthRow.querySelector(".row-value");
 
-    quantity.addEventListener("click", function () {
+    quantity.addEventListener("click", function (element) {
         const value1 = 0.5;
         const quantityValue = this.value;
         val1.innerText = "$ " + quantityValue * value1;
         qty1.innerText = `${quantityValue} *$${value1}`;
         firstRow.style.visibility = "visible";
+        let el = element.parseInt(val1.innerText, 10);
+        return element;
     });
+    console.log(el);
     order.addEventListener("click", function (e) {
         const value2 = 0.25;
         const orderValue = this.value;
