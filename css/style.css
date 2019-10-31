@@ -446,33 +446,13 @@ body {
 
 }
 
-select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    position: relative;
-}
-
-.select-label::after {
-    content: '\f35b';
-    display: block;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateY(-50%);
-    color: #08A6E4;
-    background-color: black;
-
+ul.calc-input,
+.calc-input>ul {
+    list-style: none;
 
 }
 
-select.calc-input:focus option:first-of-type {
-    display: none;
-}
+
 
 
 .checkbox-label {
