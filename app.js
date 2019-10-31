@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const val3 = divs[2].querySelector(".row-value");
             const val4 = divs[3].querySelector(".row-value");
             const value4 = 35;
+            const val5 = divs[4].querySelector(".row-value");
+            const value5 = 5;
+
             if (i === 0) {
                 const quantityValue = this.value;
                 val1.innerText = "$" + quantityValue * value1;
@@ -43,7 +46,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 val4.innerText = "$" + value4;
                 divs[3].style.visibility = "visible";
 
+            } else if (i === 4) {
+                val5.innerText = "$" + value5;
+                divs[4].style.visibility = "visible";
             }
+
+            //zmienne do włożenia do tablicy
         });
     }
 
