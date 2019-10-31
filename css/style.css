@@ -443,15 +443,58 @@ body {
     padding-left: 20px;
     color: #707070;
     font-size: 0.8125rem;
+}
+
+/* DO DROPDOWNA */
+button.calc-input {
+    width: 100%;
+    background-color: white;
+    text-align: left;
+    position: relative;
 
 }
 
-ul.calc-input,
-.calc-input>ul {
-    list-style: none;
+.dropdown {
+    position: relative;
+}
+
+.arrow {
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.arrow i {
+    font-size: 20px;
+    padding-right: 10px;
+    color: #08A6E4;
+}
+
+.hidden {
+    display: none;
+}
+
+ul.dropdown-menu {
+    /* display: none; */
+    position: absolute;
+    background-color: white;
+    padding: 20px 20px 0 20px;
+    border: 1px solid #FB3B64;
+    border-radius: 6px;
+    z-index: 100;
+    width: 100%;
+    box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
 
 }
 
+.dropdown-menu li {
+    padding-bottom: 20px;
+    color: #707070;
+    font-size: 0.8125rem;
+    cursor: pointer;
+}
 
 
 

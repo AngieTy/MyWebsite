@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const inputs = document.querySelector(".orders").querySelectorAll(".calc-input, .calc-checkbox");
+    const arrow = document.querySelector(".arrow");
+    const dropList = document.querySelector("ul.dropdown-menu");
+    arrow.addEventListener("click", function () {
+        dropList.classList.toggle("hidden");
 
+    });
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("click", function () {
             const button = document.querySelector(".value-btn").lastElementChild;
@@ -15,9 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const val4 = divs[3].querySelector(".row-value");
             const val5 = divs[4].querySelector(".row-value");
 
+
+
             let quantityValue1 = inputs[0].value;
             let quantityValue2 = inputs[1].value;
-            let quantityValue3 = inputs[2].value;
+            let quantityValue3 = inputs[2].innerText;
             const valueTable = [0.5, 0.25, 1, 35, 5];
             let quantityValue4 = valueTable[3];
             let quantityValue5 = valueTable[4];
@@ -33,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 val1.innerText = "$" + quantityValue1 * valueTable[0];
                 qty1.innerText = `${quantityValue1} *$${valueTable[0]}`;
                 divs[0].style.visibility = "visible";
-                total = total + total1;
+                total = total + total1 + total2 + total4 + total5;
                 button.innerText = total;
 
 
@@ -41,9 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 val2.innerText = "$" + quantityValue2 * valueTable[1];
                 qty2.innerText = `${quantityValue2} *$${valueTable[1]}`;
                 divs[1].style.visibility = "visible";
-                total = total + total1 + total2;
+                total = total + total1 + total2 + total4 + total5;
+                // total = total + total1 + total2;
                 button.innerText = total;
             } else if (i === 2) {
+                // dropList.addEventListener("click", function () {
+                //     this.children;
+                //     for (let k = 0; k < children.length; k++) {
+
+
+                //     }
+
+                // })
                 qty3.innerText = quantityValue3;
                 divs[2].style.visibility = "visible";
                 const prices = [0, 25, 60];
@@ -67,7 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (i === 3) {
                 val4.innerText = "$" + valueTable[3];
                 divs[3].style.visibility = "visible";
-                total = total + total1 + total2 + total4;
+                total = total + total1 + total2 + total4 + total5;
+                // total = total + total1 + total2 + total4;
                 button.innerText = total;
 
 
@@ -79,21 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 button.innerText = total;
             }
 
-
-
-            // let rowVal1 = quantityValue1 * valueTable[0];
-            // let rowVal2 = quantityValue2 * valueTable[1];
-            // let rowVal3 = quantityValue3 * valueTable[2];
-            // let rowVal4 = quantityValue4;
-            // let rowVal5 = quantityValue5;
-
         });
     }
-
-
-
-
-
 
 
 
