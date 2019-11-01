@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 } else if (quantityValue3 === "Premium") {
                     val3.innerText = "$" + prices[2];
-                    total3 = val3.innerText;
+                    total3 = prices[2];
                     total = total1 + total2 + total3 + total4 + total5;
 
                 }
