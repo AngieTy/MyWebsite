@@ -193,7 +193,6 @@ body {
     justify-content: space-between;
     margin-bottom: 37px;
     height: 370px;
-
 }
 
 .section-text {
@@ -449,57 +448,61 @@ body {
     font-size: 0.8125rem;
 }
 
-ul.calc-input {
-    padding-top: 12px;
 
-}
-
-.nested-list {
+.calc-input>option:first-child {
     display: none;
+
+
+/* DO DROPDOWNA */
+/* button.calc-input {
     width: 100%;
-    background-color: rgba(37, 25, 25, 1);
-    margin-top: 40px;
-    box-shadow: 0px 3px 6px #08A6E429;
-    border: 1px solid #FB3B64;
-    border-radius: 6px;
-    padding: 20px;
-    color: #707070;
-    font-size: 0.8125rem;
+    background-color: white;
+    text-align: left;
+    position: relative;
+
 }
 
-.nested-list li {
-    padding-bottom: 20px;
-}
-
-
-select {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
+.dropdown {
     position: relative;
 }
 
-.select-label::after {
-    content: '\f35b';
-    display: block;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    width: 20px;
-    height: 20px;
+.arrow {
+
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 0;
     transform: translateY(-50%);
-    color: #08A6E4;
-    background-color: black;
-
-
 }
 
-select.calc-input:focus option:first-of-type {
+.arrow i {
+    font-size: 20px;
+    padding-right: 10px;
+    color: #08A6E4;
+}
+
+.hidden {
     display: none;
 }
 
+ul.dropdown-menu {
+    /* display: none; */
+/* position: absolute;
+background-color: white;
+padding: 20px 20px 0 20px;
+border: 1px solid #FB3B64;
+border-radius: 6px;
+z-index: 100;
+width: 100%;
+box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
+
+}
+
+.dropdown-menu li {
+    padding-bottom: 20px;
+    color: #707070;
+    font-size: 0.8125rem;
+    cursor: pointer;
+}  */
 
 .checkbox-label {
     display: flex;
@@ -701,9 +704,13 @@ select.calc-input:focus option:first-of-type {
 }
 
 
-.form-field p {
-    font-size: 0.75rem;
-}
+.checkbox-rodo {
+    display: flex;
+    color: #707070;
+   font-size: 0.75rem;
+
+
+
 
 .form-field input[type="text"] {
     font-size: 1rem;
@@ -721,7 +728,6 @@ select.calc-input:focus option:first-of-type {
 footer {
     width: 100%;
     box-shadow: 0px -5px 40px #00000029;
-
 }
 
 footer .container {
@@ -739,9 +745,13 @@ footer .container {
 .footer-media {
     height: 100%;
     width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .footer-media>a {
     width: 30px;
     height: 30px;
+    padding-left: 20px;
 }

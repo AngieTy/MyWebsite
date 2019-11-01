@@ -1,76 +1,89 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const inputs = document.querySelector(".orders").querySelectorAll(".calc-input, .calc-checkbox");
+    const button = document.querySelector(".value-btn").lastElementChild;
+    const divs = document.querySelectorAll(".calc-row");
+    const qty1 = divs[0].querySelector(".row-calculation");
+    const val1 = divs[0].querySelector(".row-value");
+    const qty2 = divs[1].querySelector(".row-calculation");
+    const val2 = divs[1].querySelector(".row-value");
+    const qty3 = divs[2].querySelector(".row-calculation");
+    const val3 = divs[2].querySelector(".row-value");
+    const val4 = divs[3].querySelector(".row-value");
+    const val5 = divs[4].querySelector(".row-value");
+    let total = 0;
+    let total1 = 0;
+    let total2 = 0;
+    let total3 = 0;
+    let total4 = 0;
+    let total5 = 0;
+    for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("change", function () {
+            let quantityValue1 = inputs[0].value;
+            let quantityValue2 = inputs[1].value;
+            let quantityValue3 = inputs[2].value;
+            const valueTable = [0.5, 0.25, 1, 35, 5];
+            if (i === 0) {
+                val1.innerText = "$" + quantityValue1 * valueTable[0];
+                qty1.innerText = `${
+                    quantityValue1}* $${valueTable[0]}`;
+                divs[0].style.visibility = "visible";
+                total1 = (quantityValue1 * valueTable[0]);
+                total = total1 + total2 + total3 + total4 + total5;
 
-    //pobranie inputow typu number
-    const quantity = document.querySelector("[name=quantity]");
-    const order = document.querySelector("[name=order]");
-    const package = document.querySelector("[name=package]");
-    const accounting = document.querySelector("[name=accounting]");
-    const rental = document.querySelector("[name=rental]");
-    //pobranie 1 zielonego diva
-    const firstRow = document.getElementById("first-row");
-    const secondRow = document.getElementById("second-row");
-    const thirdRow = document.getElementById("third-row");
-    const fourthRow = document.getElementById("fourth-row");
-    const fifthRow = document.getElementById("fifth-row");
-    //pobranie wartości z inputów 
-    const qty1 = firstRow.querySelector(".row-calculation");
-    const qty2 = secondRow.querySelector(".row-calculation");
-    const qty3 = thirdRow.querySelector(".row-calculation");
-    const val1 = firstRow.querySelector(".row-value");
-    const val2 = secondRow.querySelector(".row-value");
-    const val3 = thirdRow.querySelector(".row-value");
-    const val4 = fourthRow.querySelector(".row-value");
-    const val5 = fifthRow.querySelector(".row-value");
+            } else if (i === 1) {
+                val2.innerText = quantityValue2 * valueTable[1];
+                qty2.innerText = ` ${quantityValue2}* $${valueTable[1] }`;
+                divs[1].style.visibility = "visible";
+                total2 = (quantityValue2 * valueTable[1]);
+                total = total1 + total2 + total3 + total4 + total5;
 
-    quantity.addEventListener("click", function (element) {
-        const value1 = 0.5;
-        const quantityValue = this.value;
-        val1.innerText = "$ " + quantityValue * value1;
-        qty1.innerText = `${quantityValue} *$${value1}`;
-        firstRow.style.visibility = "visible";
-        let el = element.parseInt(val1.innerText, 10);
-        return element;
-    });
-    console.log(el);
-    order.addEventListener("click", function (e) {
-        const value2 = 0.25;
-        const orderValue = this.value;
-        val2.innerText = "$ " + orderValue * value2;
-        qty2.innerText = `${orderValue} *$${value2}`;
-        secondRow.style.visibility = "visible";
-    });
-    package.addEventListener("click", function () {
-        const packageValue = this.value;
-        qty3.innerText = packageValue;
-        thirdRow.style.visibility = "visible";
-        const prices = [0, 25, 60];
-        if (packageValue === "Basic") {
-            val3.innerText = "$" + prices[0];
-        } else if (packageValue === "Professional") {
-            val3.innerText = "$" + prices[1];
-        } else if (packageValue === "Premium") {
-            val3.innerText = "$" + prices[2];
-        }
-    })
-    accounting.addEventListener("click", function () {
-        const value4 = 35;
-        val4.innerText = "$" + value4;
-        if (accounting.checked) {
-            fourthRow.style.visibility = "visible";
-        }
-    })
-    rental.addEventListener("click", function () {
-        const value5 = 5;
-        val5.innerText = "$" + value5;
-        if (rental.checked) {
-            fifthRow.style.visibility = "visible";
-        }
-    });
-    const all = document.querySelectorAll(".row-value");
-    console.log(all);
-    for (let i = 0; i < all.length; i++) {
-        let singleAll = all[i];
+
+            } else if (i === 2) {
+                qty3.innerText = quantityValue3;
+                divs[2].style.visibility = "visible";
+                const prices = [0, 25, 60];
+                if (quantityValue3 === "Basic") {
+                    val3.innerText = "$" + prices[0];
+                    total3 = prices[0];
+                    total = total1 + total2 + total3 + total4 + total5;
+
+
+                } else if (quantityValue3 === "Professional") {
+                    val3.innerText = "$" + prices[1];
+                    total3 = prices[1];
+                    total = total1 + total2 + total3 + total4 + total5;
+
+
+
+                } else if (quantityValue3 === "Premium") {
+                    val3.innerText = "$" + prices[2];
+                    total3 = val3.innerText;
+                    total = total1 + total2 + total3 + total4 + total5;
+
+                }
+            } else if (i === 3) {
+
+                val4.innerText = "$" + valueTable[3];
+                divs[3].style.visibility = "visible";
+                total4 = valueTable[3];
+                total = total1 + total2 + total3 + total4 + total5;
+
+                inputs[3].addEventListener("click", function () {
+                    if (this.checked) {
+                        divs[3].style.visibility = "hidden";
+
+                    }
+                });
+
+            } else if (i === 4) {
+                val5.innerText = "$" + valueTable[4];
+                divs[4].style.visibility = "visible";
+                total5 = valueTable[4];
+                total = total5 + total4 + total3 + total2 + total1;
+
+            }
+            button.innerText = "$" + total;
+        });
 
     }
-
 });
