@@ -207,7 +207,7 @@ body {
 }
 
 .section-content {
-    padding: 0 0 0 31px;
+    padding: 0 41px;
 }
 
 .section-content::after {
@@ -231,6 +231,10 @@ body {
     width: 75%;
     z-index: 2;
     position: relative;
+}
+
+.content-box:nth-child(2) .img-items {
+    width: 60%;
 }
 
 .image-square {
@@ -295,7 +299,7 @@ body {
 .section-container {
     width: 80vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
 }
@@ -337,7 +341,7 @@ body {
 .box-pricing {
     border: 1px solid #FB3B64;
     border-radius: 18px;
-    width: 320px;
+    width: 25%;
     margin-bottom: 155px;
     position: relative;
 }
@@ -444,20 +448,10 @@ body {
     font-size: 0.8125rem;
 }
 
+
 .calc-input>option:first-child {
     display: none;
-}
 
-option {
-    /* visibility: hidden; */
-    /* opacity: 1; */
-    /* margin-top: 10px; */
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 1px solid black;
-
-}
 
 /* DO DROPDOWNA */
 /* button.calc-input {
@@ -660,6 +654,10 @@ box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
 
 }
 
+.checkbox-rodo {
+    display: flex;
+}
+
 .last-field input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -701,14 +699,21 @@ box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
 
 .name-input {
     text-transform: uppercase;
-    font-size: 0.6875rem;
+    font-size: 0.7rem;
     font-weight: 700;
 }
+
 
 .checkbox-rodo {
     display: flex;
     color: #707070;
-    font-size: 0.75rem;
+   font-size: 0.75rem;
+
+
+
+
+.form-field input[type="text"] {
+    font-size: 1rem;
 }
 
 .form-button {
