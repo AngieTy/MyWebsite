@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 total = total1 + total2 + total3 + total4 + total5;
 
             } else if (i === 1) {
-                val2.innerText = quantityValue2 * valueTable[1];
+                val2.innerText = "$" + quantityValue2 * valueTable[1];
                 qty2.innerText = ` ${quantityValue2}* $${valueTable[1] }`;
                 divs[1].style.visibility = "visible";
                 total2 = (quantityValue2 * valueTable[1]);
@@ -63,21 +63,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             } else if (i === 3) {
 
+
+                if (inputs[3].checked) {
+                    divs[3].style.visibility = "visible";
+                } else {
+                    divs[3].style.visibility = "hidden";
+                    valueTable[3] = 0;
+                }
                 val4.innerText = "$" + valueTable[3];
-                divs[3].style.visibility = "visible";
                 total4 = valueTable[3];
                 total = total1 + total2 + total3 + total4 + total5;
 
-                inputs[3].addEventListener("click", function () {
-                    if (this.checked) {
-                        divs[3].style.visibility = "hidden";
-
-                    }
-                });
 
             } else if (i === 4) {
+                if (inputs[4].checked) {
+                    divs[4].style.visibility = "visible";
+                } else {
+                    divs[4].style.visibility = "hidden";
+                    valueTable[4] = 0;
+                }
                 val5.innerText = "$" + valueTable[4];
-                divs[4].style.visibility = "visible";
                 total5 = valueTable[4];
                 total = total5 + total4 + total3 + total2 + total1;
 

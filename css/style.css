@@ -367,7 +367,7 @@ body {
 .checkbox::after {
     content: "";
     display: inline-block;
-    background-image: url("/assets/Ckechmark-1.svg");
+    background-image: url("/MyWebsite/assets/Ckechmark-1.svg");
     background-size: cover;
     width: 11px;
     height: 11px;
@@ -378,7 +378,7 @@ body {
 }
 
 .error .checkbox::after {
-    background-image: url("/assets/Close.svg");
+    background-image: url("/MyWebsite/assets/Close.svg");
 }
 
 .box-pricing:nth-child(2) .pricing-form {
@@ -534,7 +534,7 @@ box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
     display: block;
     width: 12px;
     height: 12px;
-    background-image: url("/assets/Checkmark.svg");
+    background-image: url("/MyWebsite/assets/Checkmark.svg");
     position: absolute;
     top: 50%;
     left: 50%;
@@ -679,7 +679,7 @@ box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
     display: block;
     width: 12px;
     height: 12px;
-    background-image: url("/assets/Checkmark.svg");
+    background-image: url("/MyWebsite/assets/Checkmark.svg");
     position: absolute;
     top: 50%;
     left: 50%;
