@@ -28,14 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     quantityValue1}* $${valueTable[0]}`;
                 divs[0].style.visibility = "visible";
                 total1 = (quantityValue1 * valueTable[0]);
-                total = total1;
+                total = total1 + total2 + total3 + total4 + total5;
 
             } else if (i === 1) {
                 val2.innerText = quantityValue2 * valueTable[1];
                 qty2.innerText = ` ${quantityValue2}* $${valueTable[1] }`;
                 divs[1].style.visibility = "visible";
                 total2 = (quantityValue2 * valueTable[1]);
-                total = total1 + total2;
+                total = total1 + total2 + total3 + total4 + total5;
+
 
             } else if (i === 2) {
                 qty3.innerText = quantityValue3;
@@ -44,25 +45,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (quantityValue3 === "Basic") {
                     val3.innerText = "$" + prices[0];
                     total3 = prices[0];
-                    total = total1 + total2 + total3;
+                    total = total1 + total2 + total3 + total4 + total5;
+
 
                 } else if (quantityValue3 === "Professional") {
                     val3.innerText = "$" + prices[1];
                     total3 = prices[1];
-                    total = total1 + total2 + total3;
+                    total = total1 + total2 + total3 + total4 + total5;
+
 
 
                 } else if (quantityValue3 === "Premium") {
                     val3.innerText = "$" + prices[2];
                     total3 = val3.innerText;
-                    total = total1 + total2 + total3;
+                    total = total1 + total2 + total3 + total4 + total5;
+
                 }
             } else if (i === 3) {
 
                 val4.innerText = "$" + valueTable[3];
                 divs[3].style.visibility = "visible";
                 total4 = valueTable[3];
-                total = total1 + total2 + total3 + total4;
+                total = total1 + total2 + total3 + total4 + total5;
+
                 inputs[3].addEventListener("click", function () {
                     if (this.checked) {
                         divs[3].style.visibility = "hidden";
