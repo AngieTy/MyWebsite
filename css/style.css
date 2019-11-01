@@ -193,7 +193,6 @@ body {
     justify-content: space-between;
     margin-bottom: 37px;
     height: 370px;
-
 }
 
 .section-text {
@@ -445,8 +444,23 @@ body {
     font-size: 0.8125rem;
 }
 
+.calc-input>option:first-child {
+    display: none;
+}
+
+option {
+    /* visibility: hidden; */
+    /* opacity: 1; */
+    /* margin-top: 10px; */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid black;
+
+}
+
 /* DO DROPDOWNA */
-button.calc-input {
+/* button.calc-input {
     width: 100%;
     background-color: white;
     text-align: left;
@@ -478,14 +492,14 @@ button.calc-input {
 
 ul.dropdown-menu {
     /* display: none; */
-    position: absolute;
-    background-color: white;
-    padding: 20px 20px 0 20px;
-    border: 1px solid #FB3B64;
-    border-radius: 6px;
-    z-index: 100;
-    width: 100%;
-    box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
+/* position: absolute;
+background-color: white;
+padding: 20px 20px 0 20px;
+border: 1px solid #FB3B64;
+border-radius: 6px;
+z-index: 100;
+width: 100%;
+box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
 
 }
 
@@ -494,9 +508,7 @@ ul.dropdown-menu {
     color: #707070;
     font-size: 0.8125rem;
     cursor: pointer;
-}
-
-
+}  */
 
 .checkbox-label {
     display: flex;
@@ -693,7 +705,9 @@ ul.dropdown-menu {
     font-weight: 700;
 }
 
-.form-field p {
+.checkbox-rodo {
+    display: flex;
+    color: #707070;
     font-size: 0.75rem;
 }
 
@@ -709,7 +723,6 @@ ul.dropdown-menu {
 footer {
     width: 100%;
     box-shadow: 0px -5px 40px #00000029;
-
 }
 
 footer .container {
@@ -727,9 +740,13 @@ footer .container {
 .footer-media {
     height: 100%;
     width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .footer-media>a {
     width: 30px;
     height: 30px;
+    padding-left: 20px;
 }
