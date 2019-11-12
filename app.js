@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const inputs = document.querySelector(".orders").querySelectorAll(".calc-input, .calc-checkbox");
+    const inputs = document.querySelector(".orders").querySelectorAll(".calc-input, .arrow, .calc-checkbox");
     const button = document.querySelector(".value-btn").lastElementChild;
     const divs = document.querySelectorAll(".calc-row");
     const qty1 = divs[0].querySelector(".row-calculation");
@@ -16,12 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let total3 = 0;
     let total4 = 0;
     let total5 = 0;
+
+    console.log(inputs[2]);
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener("change", function () {
             let quantityValue1 = inputs[0].value;
             let quantityValue2 = inputs[1].value;
             let quantityValue3 = inputs[2].value;
-            const valueTable = [0.5, 0.25, 1, 35, 5];
+            const valueTable = [0.5, 0.25, [0, 25, 60], 35, 5];
             if (i === 0) {
                 val1.innerText = "$" + quantityValue1 * valueTable[0];
                 qty1.innerText = `${
@@ -39,25 +41,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             } else if (i === 2) {
+                // const ulList = document.querySelector(".dropdown-menu");
+                // ulList.style.display = "block";
+
                 qty3.innerText = quantityValue3;
                 divs[2].style.visibility = "visible";
-                const prices = [0, 25, 60];
                 if (quantityValue3 === "Basic") {
-                    val3.innerText = "$" + prices[0];
-                    total3 = prices[0];
+                    val3.innerText = "$" + valueTable[2][0];
+                    total3 = valueTable[2][0];
                     total = total1 + total2 + total3 + total4 + total5;
 
 
                 } else if (quantityValue3 === "Professional") {
-                    val3.innerText = "$" + prices[1];
-                    total3 = prices[1];
+                    val3.innerText = "$" + valueTable[2][1];
+                    total3 = valueTable[2][1];
                     total = total1 + total2 + total3 + total4 + total5;
 
 
 
                 } else if (quantityValue3 === "Premium") {
-                    val3.innerText = "$" + prices[2];
-                    total3 = prices[2];
+                    val3.innerText = "$" + valueTable[2][2];
+                    total3 = valueTable[2][2];
                     total = total1 + total2 + total3 + total4 + total5;
 
                 }
