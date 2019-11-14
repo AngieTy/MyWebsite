@@ -1,5 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const inputs = document.querySelector(".orders").querySelectorAll(".calc-input, .arrow, .calc-checkbox");
+
+
+    // DROPDOWN 
+    const liList = document.querySelectorAll(".drop-element");
+    const ulList = document.querySelector(".dropdown-menu");
+    const arrow = document.querySelector(".fa-arrow-circle-up");
+    arrow.addEventListener("click", function () {
+        ulList.classList.toggle("hidden");
+    });
+
+    for (let j = 0; j < liList.length; j++) {
+        const singleLi = liList[j];
+        singleLi.addEventListener("click", function () {
+            let textElement = this.innerText;
+            inputs[2].innerText = textElement;
+            ulList.classList.toggle("hidden");
+
+        })
+    }
+
+
+
+
+
+    //KALKULATOR
+    const inputs = document.querySelector(".orders").querySelectorAll(".calc-input, .calc-input-button, .calc-checkbox");
     const button = document.querySelector(".value-btn").lastElementChild;
     const divs = document.querySelectorAll(".calc-row");
     const qty1 = divs[0].querySelector(".row-calculation");
@@ -22,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inputs[i].addEventListener("change", function () {
             let quantityValue1 = inputs[0].value;
             let quantityValue2 = inputs[1].value;
-            let quantityValue3 = inputs[2].value;
+            let quantityValue3 = inputs[2].innerText;
             const valueTable = [0.5, 0.25, [0, 25, 60], 35, 5];
             if (i === 0) {
                 val1.innerText = "$" + quantityValue1 * valueTable[0];
@@ -41,8 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             } else if (i === 2) {
-                // const ulList = document.querySelector(".dropdown-menu");
-                // ulList.style.display = "block";
+
+
+
 
                 qty3.innerText = quantityValue3;
                 divs[2].style.visibility = "visible";
@@ -95,4 +121,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
+
+
+
+
+    // WYSUWANIE MENU
+    const burgerMenu = document.querySelector(".burger-menu");
+    burgerMenu.addEventListener("click", function () {
+        const burgerList = document.querySelector(".burger-list");
+        burgerList.classList.toggle("active");
+    })
 });

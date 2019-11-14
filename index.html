@@ -24,9 +24,24 @@
                     <li class="navigation-list-element"><a href="#" class="list-element">prices</a></li>
                     <li class="navigation-list-element"><a href="#" class="list-element">contact</a></li>
                 </ul>
+                <!-- mobilne menu -->
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="burger-list">
+                    <li><a href="#" class="burger-list-element">why us</a></li>
+                    <li><a href="#" class="burger-list-element">benefits</a></li>
+                    <li><a href="#" class="burger-list-element">prices</a></li>
+                    <li><a href="#" class="burger-list-element">contact</a></li>
+                </ul>
             </div>
+
         </nav>
+
         <div class="ordering banner">
+
             <h1 class="banner-title">Sell More!</h1>
             <p class="banner-text">Open shop for our platform and increase your sales</p>
             <a href="#" class="banner-btn btn">Open your shop</a>
@@ -75,7 +90,7 @@
             <!-- BOX 2 -->
             <div class="content-box">
                 <div class="content-images">
-                    <img src="assets/iPhone.png" alt="iphone" class="img-items">
+                    <img src="assets/iPhone.png" alt="iphone" class="img-items telephone">
                     <div class="image-circle"></div>
                 </div>
                 <div class="section-content">
@@ -109,9 +124,11 @@
 
             <!-- pricing 1 -->
             <div class="ordering box-pricing">
-                <h3 class="title-pricing">Basic</h3>
-                <p class="pricing-value">$0</p>
-                <p class="offer">Limited offer</p>
+                <div class="pricing-header">
+                    <h3 class="title-pricing">Basic</h3>
+                    <p class="pricing-value">$0</p>
+                    <p class="offer">Limited offer</p>
+                </div>
                 <div class="ordering">
                     <div class="pricing-form">
                         <span class="checkbox">
@@ -138,9 +155,11 @@
             </div>
             <!-- pricing 2 -->
             <div class="ordering box-pricing ">
-                <h3 class="title-pricing">Professional</h3>
-                <p class="pricing-value blue-pricing">$25</p>
-                <p class="offer">Limited offer</p>
+                <div class="pricing-header">
+                    <h3 class="title-pricing">Professional</h3>
+                    <p class="pricing-value blue-pricing">$25</p>
+                    <p class="offer">Limited offer</p>
+                </div>
                 <div class="ordering">
                     <div class="pricing-form">
                         <span class="checkbox">
@@ -167,9 +186,11 @@
             </div>
             <!-- pricing3 -->
             <div class="ordering box-pricing">
-                <h3 class="title-pricing">Premium</h3>
-                <p class="pricing-value green-pricing">$60</p>
-                <p class="offer">Limited offer</p>
+                <div class="pricing-header">
+                    <h3 class="title-pricing">Premium</h3>
+                    <p class="pricing-value green-pricing">$60</p>
+                    <p class="offer">Limited offer</p>
+                </div>
                 <div class="ordering">
                     <div class="pricing-form">
                         <span class="checkbox">
@@ -204,22 +225,22 @@
             <form class="orders">
                 <input type="number" name="quantity" min="0" placeholder="Products quantity" class="calc-input">
                 <input type="number" name="order" min="0" placeholder="Estimated orders in month" class="calc-input">
-                <select name="package" id="package-list" class="calc-input">
+                <!-- <select name="package" id="package-list" class="calc-input">
                     <option value="">Choose package</option>
                     <option value="Basic">Basic</option>
                     <option value="Professional">Professional</option>
                     <option value="Premium">Premium</option>
-                </select>
-                <!-- <div class="dropdown">
+                </select> -->
+                <div class="dropdown">
                     <button class="calc-input-button" id="doprown-btn" type="button" data-toggle="dropdown">
                         Choose package <span class="arrow"><i class="fas fa-arrow-circle-up"></i></span>
                     </button>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu hidden" role="menu">
                         <li class="drop-element" role="presentation">Basic</li>
                         <li class="drop-element" role="presentation">Proffesional</li>
                         <li class="drop-element" role="presentation">Premium</li>
                     </ul>
-                </div> -->
+                </div>
 
                 <label class="checkbox-label">
                     <input type="checkbox" name="accounting" class="calc-checkbox">Accounting</label>
