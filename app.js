@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // DROPDOWN 
-    const liList = document.querySelectorAll(".drop-element");
     const ulList = document.querySelector(".dropdown-menu");
     const arrow = document.querySelector(".fa-arrow-circle-up");
     arrow.addEventListener("click", function () {
@@ -29,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let total3 = 0;
     let total4 = 0;
     let total5 = 0;
+
+
+    const liList = document.querySelectorAll(".drop-element");
+
     for (let j = 0; j < liList.length; j++) {
         const singleLi = liList[j];
         singleLi.addEventListener("click", function () {
@@ -36,26 +39,40 @@ document.addEventListener("DOMContentLoaded", function () {
             inputs[2].innerText = "";
             inputs[2].innerText = textElement;
             ulList.classList.toggle("hidden");
-            console.log(inputs[2].innerText);
+
+
+            let quantityValue3 = inputs[2].innerText;
+            qty3.innerText = quantityValue3;
+            const valueTable = [0.5, 0.25, [0, 25, 60], 35, 5];
+            divs[2].style.visibility = "visible";
+
+            if (quantityValue3 === "Basic") {
+                val3.innerText = "$" + valueTable[2][0];
+                total3 = valueTable[2][0];
+
+                total = total1 + total2 + total3 + total4 + total5;
+            } else if (quantityValue3 === "Professional") {
+                val3.innerText = "$" + valueTable[2][1];
+                total3 = valueTable[2][1];
+
+                total = total1 + total2 + total3 + total4 + total5;
+
+            } else if (quantityValue3 === "Premium") {
+                val3.innerText = "$" + valueTable[2][2];
+                total3 = valueTable[2][2];
+                total = total1 + total2 + total3 + total4 + total5;
+            }
+
+            button.innerText = "$" + total;
         })
     }
 
     for (let i = 0; i < inputs.length; i++) {
-
-
-        // const basic = document.querySelector(".dropdown-menu .drop-element:first-child");
-        // const proffesional = document.querySelector(".dropdown-menu .drop-element:nth-child(2)");
-        // const premium = document.querySelector(".dropdown-menu .drop-element:last-child");
-        // const basicText = basic.innerText;
-        // const proffesionalText = proffesional.innerText;
-        // const premiumText = premium.innerText;
-
-
-
         inputs[i].addEventListener("change", function () {
+
+
             let quantityValue1 = inputs[0].value;
             let quantityValue2 = inputs[1].value;
-            let quantityValue3 = inputs[2].innerText;
             const valueTable = [0.5, 0.25, [0, 25, 60], 35, 5];
             if (i === 0) {
                 val1.innerText = "$" + quantityValue1 * valueTable[0];
@@ -71,33 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 divs[1].style.visibility = "visible";
                 total2 = (quantityValue2 * valueTable[1]);
                 total = total1 + total2 + total3 + total4 + total5;
-
-
-            } else if (i === 2) {
-
-                qty3.innerText = quantityValue3;
-                divs[2].style.visibility = "visible";
-                if (quantityValue3 === "Basic") {
-                    val3.innerText = "$" + valueTable[2][0];
-                    total3 = valueTable[2][0];
-                    total = total1 + total2 + total3 + total4 + total5;
-
-
-                } else if (quantityValue3 === "Professional") {
-                    val3.innerText = "$" + valueTable[2][1];
-                    total3 = valueTable[2][1];
-                    total = total1 + total2 + total3 + total4 + total5;
-
-
-
-                } else if (quantityValue3 === "Premium") {
-                    val3.innerText = "$" + valueTable[2][2];
-                    total3 = valueTable[2][2];
-                    total = total1 + total2 + total3 + total4 + total5;
-
-                }
-
-
 
             } else if (i === 3) {
 
@@ -129,8 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
-
-
 
 
     // WYSUWANIE MENU
