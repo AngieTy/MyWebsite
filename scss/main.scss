@@ -2,17 +2,18 @@
 @import "fonts";
 
 
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html,
 body {
     font-family: "Open Sans", sans-serif;
     background-color: white;
-
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .btn {
@@ -170,7 +171,6 @@ body {
 .banner {
     margin-top: 130px;
     z-index: -1;
-    padding: 0 15px;
 }
 
 .banner-title {
@@ -363,8 +363,7 @@ body {
         background-color: #F7F7F7;
         margin-bottom: 0;
         padding: 0;
-
-        height: 60vh;
+        height: 65vh;
 
 
 
@@ -549,77 +548,68 @@ body {
     padding-left: 20px;
     color: #707070;
     font-size: 0.8125rem;
-
-    >option:first-child {
-        display: none;
-    }
 }
 
 /* DO DROPDOWNA */
 
-
-.calc-input-button {
-    outline: none;
-    margin-bottom: 20px;
-    height: 40px;
-    box-shadow: 0px 3px 6px #08A6E429;
-    border: 1px solid #08A6E4;
-    border-radius: 6px;
-    padding-left: 20px;
-    color: #707070;
-    font-size: 0.8125rem;
-    width: 100%;
-    background-color: white;
-    text-align: left;
-    position: relative;
-
-}
-
-
-
 .dropdown {
     position: relative;
+
+    .arrow {
+
+        position: absolute;
+        top: calc(50% - 10px);
+        right: 0;
+        transform: translateY(-50%);
+
+        i {
+            font-size: 20px;
+            padding-right: 10px;
+            color: #08A6E4;
+        }
+    }
+
+    .calc-input-button {
+        outline: none;
+        margin-bottom: 20px;
+        height: 40px;
+        box-shadow: 0px 3px 6px #08A6E429;
+        border: 1px solid #08A6E4;
+        border-radius: 6px;
+        padding-left: 20px;
+        color: #707070;
+        font-size: 0.8125rem;
+        width: 100%;
+        background-color: white;
+        text-align: left;
+
+    }
+
+    ul.dropdown-menu {
+        position: absolute;
+        background-color: white;
+        padding: 20px 20px 0 20px;
+        border: 1px solid #FB3B64;
+        border-radius: 6px;
+        z-index: 100;
+        width: 100%;
+        box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
+
+        li {
+            padding-bottom: 20px;
+            color: #707070;
+            font-size: 0.8125rem;
+            cursor: pointer;
+        }
+
+
+    }
+
+    ul.hidden {
+        display: none;
+    }
+
 }
-
-.arrow {
-
-    position: absolute;
-    top: 50%;
-    right: 0;
-    z-index: 100;
-    transform: translateY(-50%);
-}
-
-.arrow i {
-    font-size: 20px;
-    padding-right: 10px;
-    color: #08A6E4;
-}
-
-ul.hidden {
-    display: none;
-}
-
-ul.dropdown-menu {
-    position: absolute;
-    background-color: white;
-    padding: 20px 20px 0 20px;
-    border: 1px solid #FB3B64;
-    border-radius: 6px;
-    z-index: 100;
-    width: 100%;
-    box-shadow: 0px 3px 6px rgba(228, 8, 8, 0.161);
-
-}
-
-.dropdown-menu li {
-    padding-bottom: 20px;
-    color: #707070;
-    font-size: 0.8125rem;
-    cursor: pointer;
-}
-
-//   KONIEC DROPDOWN
 
 .checkbox-label {
     display: flex;
@@ -838,6 +828,7 @@ footer {
     .container {
         height: 89px;
         margin: 0 auto;
+        max-width: 1352px;
     }
 }
 

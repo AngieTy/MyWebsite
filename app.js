@@ -9,18 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ulList.classList.toggle("hidden");
     });
 
-    for (let j = 0; j < liList.length; j++) {
-        const singleLi = liList[j];
-        singleLi.addEventListener("click", function () {
-            let textElement = this.innerText;
-            inputs[2].innerText = textElement;
-            ulList.classList.toggle("hidden");
-
-        })
-    }
-
-
-
 
 
     //KALKULATOR
@@ -42,12 +30,33 @@ document.addEventListener("DOMContentLoaded", function () {
     let total4 = 0;
     let total5 = 0;
 
-    console.log(inputs[2]);
+
     for (let i = 0; i < inputs.length; i++) {
+
+        for (let j = 0; j < liList.length; j++) {
+            const singleLi = liList[j];
+            singleLi.addEventListener("click", function () {
+                let textElement = singleLi.innerText;
+                inputs[2].innerText = "";
+                inputs[2].innerText = textElement;
+                ulList.classList.toggle("hidden");
+                console.log(inputs[2].innerText);
+            })
+        }
+        // const basic = document.querySelector(".dropdown-menu .drop-element:first-child");
+        // const proffesional = document.querySelector(".dropdown-menu .drop-element:nth-child(2)");
+        // const premium = document.querySelector(".dropdown-menu .drop-element:last-child");
+        // const basicText = basic.innerText;
+        // const proffesionalText = proffesional.innerText;
+        // const premiumText = premium.innerText;
+
+
+        let quantityValue1 = inputs[0].value;
+        let quantityValue2 = inputs[1].value;
+        let quantityValue3 = inputs[2].innerText;
+
         inputs[i].addEventListener("change", function () {
-            let quantityValue1 = inputs[0].value;
-            let quantityValue2 = inputs[1].value;
-            let quantityValue3 = inputs[2].innerText;
+
             const valueTable = [0.5, 0.25, [0, 25, 60], 35, 5];
             if (i === 0) {
                 val1.innerText = "$" + quantityValue1 * valueTable[0];
@@ -66,9 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             } else if (i === 2) {
-
-
-
 
                 qty3.innerText = quantityValue3;
                 divs[2].style.visibility = "visible";
@@ -91,6 +97,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     total = total1 + total2 + total3 + total4 + total5;
 
                 }
+
+
+
             } else if (i === 3) {
 
 
@@ -131,4 +140,5 @@ document.addEventListener("DOMContentLoaded", function () {
         const burgerList = document.querySelector(".burger-list");
         burgerList.classList.toggle("active");
     })
+
 });

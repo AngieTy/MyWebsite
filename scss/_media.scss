@@ -130,6 +130,11 @@
         display: none;
     }
 
+    .banner {
+        padding: 0 15px;
+
+    }
+
     .banner-btn {
         padding-left: 120px;
         padding-right: 120px;
@@ -187,6 +192,7 @@
 
         &:last-of-type {
             background-color: white;
+            height: 90vh;
 
             .section-content {
                 margin: 0;
