@@ -29,20 +29,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let total3 = 0;
     let total4 = 0;
     let total5 = 0;
-
+    for (let j = 0; j < liList.length; j++) {
+        const singleLi = liList[j];
+        singleLi.addEventListener("click", function () {
+            let textElement = singleLi.innerText;
+            inputs[2].innerText = "";
+            inputs[2].innerText = textElement;
+            ulList.classList.toggle("hidden");
+            console.log(inputs[2].innerText);
+        })
+    }
 
     for (let i = 0; i < inputs.length; i++) {
 
-        for (let j = 0; j < liList.length; j++) {
-            const singleLi = liList[j];
-            singleLi.addEventListener("click", function () {
-                let textElement = singleLi.innerText;
-                inputs[2].innerText = "";
-                inputs[2].innerText = textElement;
-                ulList.classList.toggle("hidden");
-                console.log(inputs[2].innerText);
-            })
-        }
+
         // const basic = document.querySelector(".dropdown-menu .drop-element:first-child");
         // const proffesional = document.querySelector(".dropdown-menu .drop-element:nth-child(2)");
         // const premium = document.querySelector(".dropdown-menu .drop-element:last-child");
@@ -51,12 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // const premiumText = premium.innerText;
 
 
-        let quantityValue1 = inputs[0].value;
-        let quantityValue2 = inputs[1].value;
-        let quantityValue3 = inputs[2].innerText;
 
         inputs[i].addEventListener("change", function () {
-
+            let quantityValue1 = inputs[0].value;
+            let quantityValue2 = inputs[1].value;
+            let quantityValue3 = inputs[2].innerText;
             const valueTable = [0.5, 0.25, [0, 25, 60], 35, 5];
             if (i === 0) {
                 val1.innerText = "$" + quantityValue1 * valueTable[0];
