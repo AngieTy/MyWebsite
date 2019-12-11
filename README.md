@@ -6,6 +6,6 @@ Technologies I use:
   - RWD
   - JavaScript
   - Gulp
-Layout is responsive, there's no backend in this project.
+ Layout is responsive, there's no backend in this project.
 Project includes simple pricing calculator. 
 
